@@ -19,21 +19,27 @@ public class Main {
     public static void main(String[] args) {
         Laptop lap1 = new Laptop();
         Laptop lap2 = new Laptop("Lenovo laptop", 1000.00, "core i7");
-        System.out.println(lap1);
-        System.out.println(lap2);
-
         Tv tv1 = new Tv();
         Tv tv2 = new Tv("Sumsung", 2000.00, "Full HD");
-        System.out.println(tv1);
-        System.out.println(tv2);
 
         Container container = new Container();
         container.addProduct(lap1);
         container.addProduct(lap2);
         container.addProduct(tv1);
         container.addProduct(tv2);
-        System.out.println("Count of products: " + container.countProducts());
+
+        System.out.println("Products list:");
+        container.printProductsList();
+
+        System.out.println("\nCount of products: " + container.countProducts());
+
         System.out.println("Average price:" + container.getAveragePrice());
+
+        System.out.println("Get product by index:");
         System.out.println(container.getProductByIndex(2));
+
+        container.sortByPrice();
+        System.out.println("\nProducts sorted by price:");
+        container.printProductsList();
     }
 }

@@ -38,4 +38,27 @@ public class Container {
     }
 
 
+    void sortByPrice(){
+
+        for (int j = products.length - 1; j >= 0; j--) {
+            for (int i = 0; i < products.length - 1; i++) {
+                if (products[i].getPrice() > products[i + 1].getPrice()) {
+                    Product temp = products[i];
+                    products[i] = products[i + 1];
+                    products[i + 1] = temp;
+                }
+            }
+        }
+    }
+
+
+    void printProductsList(){
+        for (int i = 0; i < products.length; i++) {
+            System.out.println((products[i]));
+        }
+    }
+
+
+
+
 }
