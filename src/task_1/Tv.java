@@ -1,3 +1,5 @@
+package task_1;
+
 /**
  * Created by Lena on 12/14/2017.
  */
@@ -25,7 +27,7 @@ public class Tv extends Product {
 
     @Override
     public String toString() {
-        return "Tv{" +
+        return "task_1.Tv{" +
                 super.toString() +
                 "hdType='" + hdType + '\'' +
                 "} ";

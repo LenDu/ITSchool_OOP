@@ -1,4 +1,4 @@
-import java.util.Arrays;
+package task_1;
 
 /**
  * Created by Lena on 12/15/2017.
