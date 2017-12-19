@@ -40,7 +40,7 @@ public class InputHumanData {
         return input;
     }
 
-    //method fot input Human Height and Weight from the keyboard
+    //method for input Human Height and Weight from the keyboard
     static float inputParameters (){
 
         Scanner scanner = new Scanner(System.in);

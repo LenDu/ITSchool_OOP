@@ -84,11 +84,32 @@ public class Human {
     }
 
     boolean spendTimeTogether(Human human) {
-        return false;
+        float h1 = this.getHeight();
+        float h2 = human.getHeight();
+        if (h1 > h2) {
+            if ((100 - h2 * 100 / h1) > 10) {
+                return Math.random() < 0.85;
+            } else {
+                return Math.random() < 0.95;
+            }
+        } else {
+            if ((100 - h1 * 100 / h2) > 10) {
+                return Math.random() < 0.85;
+            } else {
+                return Math.random() < 0.95;
+            }
+        }
     }
 
     Human toBeInRelationships(Human human) {
-        return human;
+        if (this.speak(human) && this.tolerateSociety(human) && this.spendTimeTogether(human)) {
+            if (this.getSex() == human.getSex()) {
+                return null;
+            } else return human;
+        } else {
+            System.out.println("Ничего не вышло... разбежались");
+            return null;
+        }
     }
 
     @Override
