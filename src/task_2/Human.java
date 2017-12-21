@@ -105,7 +105,17 @@ public class Human {
         if (this.speak(human) && this.tolerateSociety(human) && this.spendTimeTogether(human)) {
             if (this.getSex() == human.getSex()) {
                 return null;
-            } else return human;
+            } else {
+                Human newHuman;
+                if (!this.getSex()) {
+                    Woman woman = (Woman) this;
+                    newHuman = woman.giveBirthToHuman(human);
+                } else {
+                    Woman woman = (Woman) human;
+                    newHuman = woman.toBeInRelationships(this);
+                }
+                return newHuman;
+            }
         } else {
             System.out.println("Ничего не вышло... разбежались");
             return null;

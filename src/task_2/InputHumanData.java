@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class InputHumanData {
 
     //method for input Human Sex from the keyboard
-   static boolean inputSex(){
+    static boolean inputSex() {
         boolean sex = true, repeat = false;
         Scanner scanner = new Scanner(System.in);
 
@@ -20,20 +20,20 @@ public class InputHumanData {
             if (input.equals("W")) {
                 sex = false;
                 break;
-            } else if (input.equals("M")){
+            } else if (input.equals("M")) {
                 break;
-            }else {
+            } else {
                 repeat = true;
                 System.out.println("Wrong input. Please repeat:");
             }
 
-        }while (repeat == true);
+        } while (repeat == true);
 
         return sex;
     }
 
     //method fot input Human Name and Surname from the keyboard
-    static String inputName(){
+    static String inputName() {
 
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
@@ -41,7 +41,7 @@ public class InputHumanData {
     }
 
     //method for input Human Height and Weight from the keyboard
-    static float inputParameters (){
+    static float inputParameters() {
 
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();

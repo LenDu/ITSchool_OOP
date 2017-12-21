@@ -14,24 +14,26 @@ public class Woman extends Human {
     }
 
     Human giveBirthToHuman(Human human) {
-        if(Math.random() <=0.5){
+        if (Math.random() <= 0.5) {
             System.out.println("Please input girl name:");
             String girlName = InputHumanData.inputName();
             String girlSurname = human.getSurname();
-            float girlHeight = (float)(this.height - 0.1*(human.height - this.height));
-            float girlWeight = (float)(this.weight - 0.1*(human.weight - this.weight));
+            float girlHeight = (float) (this.height - 0.1 * (human.height - this.height));
+            float girlWeight = (float) (this.weight - 0.1 * (human.weight - this.weight));
             Woman newGirl = new Woman(false, girlName, girlSurname, girlHeight, girlWeight);
 
+            System.out.println("New human:");
             return newGirl;
 
-        }else{
+        } else {
             System.out.println("Please input boy name:");
             String boyName = InputHumanData.inputName();
             String boySurname = human.getSurname();
-            float boyHeight = (float)(human.height - 0.1*(this.height - human.height));
-            float boyWeight = (float)(human.weight - 0.1*(this.weight - human.weight));
+            float boyHeight = (float) (human.height - 0.1 * (this.height - human.height));
+            float boyWeight = (float) (human.weight - 0.1 * (this.weight - human.weight));
             Man newBoy = new Man(true, boyName, boySurname, boyHeight, boyWeight);
 
+            System.out.print("New human: ");
             return newBoy;
         }
 
