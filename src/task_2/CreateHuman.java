@@ -6,7 +6,6 @@ package task_2;
 public class CreateHuman {
 
     public static Human createHuman() {
-        Human human;
         System.out.println("Input a human sex (M/W):");
         boolean sex = InputHumanData.inputSex();
 
@@ -17,19 +16,12 @@ public class CreateHuman {
         String surname = InputHumanData.inputName();
 
         System.out.println("Input a human Height(cm):");
-        float height = InputHumanData.inputParameters();
+        float height = InputHumanData.inputHeight();
 
         System.out.println("Input a human Weight(kg):");
-        float weight = InputHumanData.inputParameters();
+        float weight = InputHumanData.inputWeight();
 
-        if (sex == true) {
-            Man man = new Man(sex, name, surname, height, weight);
-            human = man;
-        } else {
-            Woman woman = new Woman(sex, name, surname, height, weight);
-            human = woman;
-        }
-
-        return human;
+        return sex ? new Man(sex, name, surname, height, weight)
+                   : new Woman(sex, name, surname, height, weight);
     }
 }

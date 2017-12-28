@@ -117,7 +117,7 @@ public class Human {
                 return newHuman;
             }
         } else {
-            System.out.println("Ничего не вышло... разбежались");
+           // System.out.println("Ничего не вышло... разбежались");
             return null;
         }
     }

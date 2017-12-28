@@ -5,15 +5,20 @@ package task_2;
  */
 public class Main {
     public static void main(String[] args) {
-        Human human1 = new Human();
-        human1 = CreateHuman.createHuman();
-        System.out.println(human1);
+        Human firstHuman = CreateHuman.createHuman();
+        System.out.println(firstHuman);
 
-        Human human2 = new Human();
-        human2 = CreateHuman.createHuman();
-        System.out.println(human2);
+        Human secondHuman = CreateHuman.createHuman();
+        System.out.println(secondHuman);
 
-        System.out.println(Test.test(human1, human2));
+        Human compatibilityResult = CompatibilityTest.compatibilityTest(firstHuman, secondHuman);
+
+        if (compatibilityResult == null){
+            System.out.println("Ничего не вышло... разбежались");
+        }else{
+            System.out.println(compatibilityResult);
+        }
+
 
     }
 }
