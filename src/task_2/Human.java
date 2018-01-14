@@ -87,17 +87,17 @@ public class Human {
         float h1 = this.getHeight();
         float h2 = human.getHeight();
         if (h1 > h2) {
-            if ((100 - h2 * 100 / h1) > 10) {
-                return Math.random() < 0.85;
-            } else {
-                return Math.random() < 0.95;
-            }
+            return compareHeight(h1, h2);
         } else {
-            if ((100 - h1 * 100 / h2) > 10) {
-                return Math.random() < 0.85;
-            } else {
-                return Math.random() < 0.95;
-            }
+            return compareHeight(h2, h1);
+        }
+    }
+
+    private static boolean compareHeight(float tallerHeight, float lowerHeight) {
+        if ((100 - lowerHeight * 100 / tallerHeight) > 10) {
+            return Math.random() <= 0.85;
+        } else {
+            return Math.random() <= 0.95;
         }
     }
 
@@ -106,21 +106,24 @@ public class Human {
             if (this.getSex() == human.getSex()) {
                 return null;
             } else {
-                Human newHuman;
-                if (!this.getSex()) {
-                    Woman woman = (Woman) this;
-                    newHuman = woman.giveBirthToHuman(human);
-                } else {
-                    Woman woman = (Woman) human;
-                    newHuman = woman.toBeInRelationships(this);
-                }
-                return newHuman;
+                return createChildHuman(this, human);
             }
         } else {
-           // System.out.println("Ничего не вышло... разбежались");
             return null;
         }
     }
+
+
+    private static Human createChildHuman(Human firstHuman, Human secondHuman) {
+        if (!firstHuman.getSex()) {
+            Woman woman = (Woman) firstHuman;
+            return woman.giveBirthToHuman(secondHuman);
+        } else {
+            Woman woman = (Woman) secondHuman;
+            return woman.giveBirthToHuman(firstHuman);
+        }
+    }
+
 
     @Override
     public String toString() {
