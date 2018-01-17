@@ -1,4 +1,4 @@
-# ITShool_OOP
+# ITSchool_OOP
 
 Test tasks in OOP basics 
 
